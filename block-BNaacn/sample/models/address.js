@@ -7,6 +7,6 @@ let addressSchema = new Schema({
     state: { type: String, minLength: 5, maxLength: 10, },
     pin: Number,
     user: mongoose.Schema.Types.ObjectId,
-}, { time: timeStamps });
+}, { timeStamps: true });
 
 module.exports = mongoose.model("Address", addressSchema);
