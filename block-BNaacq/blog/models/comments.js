@@ -3,8 +3,8 @@ let Schema = mongoose.Schema;
 
 let commentsSchema = new Schema({
     content: { type: String, lowercase: true },
-    author: Schema.Types.ObjectId,
-    article: Schema.Types.ObjectId,
+    author: { type: Schema.Types.ObjectId, ref: user },
+    article: { type: Schema.Types.ObjectId, ref: article }
 }, { timestamps: true });
 
 let Comments = mongoose.model("Comments", commentsSchema);

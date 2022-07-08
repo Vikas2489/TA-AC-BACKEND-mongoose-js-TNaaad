@@ -6,8 +6,8 @@ let articleSchema = new Schema({
     description: { type: String, lowercase: true },
     tags: { type: [String], lowercase: true },
     likes: { type: String, lowercase: true },
-    author: Schema.Types.ObjectId,
-    comments: Schema.Types.ObjectId,
+    author: { type: Schema.Types.ObjectId, type: ref },
+    comments: String,
 }, { timestamps: true });
 
 let Article = mongoose.model("Article", articleSchema);
