@@ -129,6 +129,10 @@ app.use((req, res) => {
     res.send("Page not found");
 })
 
+app.use((err, req, res, next) => {
+    res.send(err);
+});
+
 app.listen(4000, () => {
     console.log("listening on port 4444");
 });
